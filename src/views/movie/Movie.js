@@ -1,20 +1,16 @@
 import React, { PureComponent } from 'react';
 import axios from 'axios';
-import { connect } from 'react-redux';
 import { API } from '../../helpers/apis';
-import menu from '../../hoc/menu/menu';
-import { getParams, mapStateToProps, mapDispatchToProps } from './movie-data';
+import { getParams } from './movie-data';
 
 class Movie extends PureComponent {
   async componentDidMount() {
-    const { setMovieState, match } = this.props;
+    const { setMovieState, match = {} } = this.props;
     const { params = {} } = match;
     const { id } = params;
 
     const res = await axios.get(`${ API }/data${ getParams(id) }`).then(resp => resp.data.response.group.common).catch(e => new Error(e));
-    !(res instanceof Error)
-      ? setMovieState(res)
-      : alert(res);
+    if(!(res instanceof Error)) setMovieState(res);
   }
 
   render() {
@@ -39,4 +35,4 @@ class Movie extends PureComponent {
   }
 }
 
-export default menu(connect(mapStateToProps, mapDispatchToProps)(Movie));
+export default Movie;

@@ -1,20 +1,21 @@
 import React, { PureComponent } from 'react';
 import axios from 'axios';
-import { connect } from 'react-redux';
 import { API } from '../../helpers/apis';
-import menu from '../../hoc/menu/menu';
 import Search from '../../components/search/Search';
-import { params, mapStateToProps, mapDispatchToProps, renderMovies } from './home-data';
+import { params, renderMovies } from './home-data';
 
 class Home extends PureComponent {
   
-  state = {
-    loading: true,
-    movies: [],
+  constructor() {
+    super();
+    this.state = {
+      loading: true,
+      movies: [],
+    };
   }
 
   async componentDidMount() {
-    const { setMoviesState } = this.props;
+    const { setMoviesState = () => {} } = this.props;
     const res = await axios.get(`${ API }/list${ params }`).then(resp => resp.data.response.groups).catch(e => new Error(e));
     !(res instanceof Error)
       ? this.setState({ loading: false, movies: renderMovies(res)}, () => setMoviesState(res))
@@ -41,4 +42,4 @@ class Home extends PureComponent {
   }
 }
 
-export default menu(connect(mapStateToProps, mapDispatchToProps)(Home));
+export default Home;

@@ -4,8 +4,12 @@ import chai from 'chai'
 import chaiEnzyme from 'chai-enzyme'
 
 configure({ adapter: new Adapter() });
-chai.use(chaiEnzyme());
+// chai.use(chaiEnzyme());
 
-require.extensions['.css'] = function () {
+require.extensions['.scss'] = function () {
+    return null;
+};
+
+require.extensions['.svg'] = function () {
     return null;
 };

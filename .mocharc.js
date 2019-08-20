@@ -4,6 +4,5 @@ module.exports = {
   timeout: 5000,
   spec: [
     'src/**/*.test.js',
-    'src/**/*.spec.js',
   ]
 }
