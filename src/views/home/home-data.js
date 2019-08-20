@@ -14,7 +14,11 @@ export const mapDispatchToProps = dispatch => ({
 });
 
 export const renderMovies = movies => movies.map(movie => {
-  const { image_large, title } = movie;
+  const { image_large, title, id } = movie;
 
-  return <img key={ v4() } src={ image_large } alt={ title } />;
+  return (
+    <a key={ v4() } href={ `/detalles/${ id }` }>
+      <img src={ image_large } alt={ title } />
+    </a>
+  );
 })

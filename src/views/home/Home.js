@@ -34,8 +34,8 @@ class Home extends PureComponent {
       <div className="home-content">
         <Search callback={ this.handleFilterMovies }/>
         <div className="home-movies">
-            { movies }
-          </div>
+          { movies }
+        </div>
       </div>
       );
   }

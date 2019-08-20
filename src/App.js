@@ -3,6 +3,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
 import store from './state/store';
 import Home from './views/home/Home';
+import Movie from './views/movie/Movie';
 import './app.scss';
 
 function App() {
@@ -10,7 +11,8 @@ function App() {
     <Provider store={ store }>
       <BrowserRouter>
         <Switch>
-          <Route path="/" component={ Home } />
+          <Route exact path="/" component={ Home } />
+          <Route exact path="/detalles/:id" component={ Movie } />
           <Redirect from="/" to="/" />
         </Switch>
       </BrowserRouter>
