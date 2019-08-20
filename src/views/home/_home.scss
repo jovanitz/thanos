@@ -1,0 +1,14 @@
+.home-content {
+  width: 100%;
+}
+
+.home-movies {
+  margin: 1em 10% 0;
+
+  > img {
+    width: 300px;
+    margin-right: 3em;
+    margin-top: 2em;
+    cursor: pointer;
+  }
+}

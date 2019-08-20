@@ -1,13 +1,13 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 
 const menu = WrappedComponent => {
   class Menu extends Component {
     render() {
       return (
-        <Fragment>
+        <div className="menu">
           <img className="menu-logo" alt="logo" src={ require("../../img/logo.svg") } />
           <WrappedComponent { ...this.props } />
-        </Fragment>
+        </div>
       );
     }
 
