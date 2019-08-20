@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import menu from '../../hoc/menu/menu';
 
 class Home extends Component {
   render() {
@@ -10,4 +11,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default menu(Home);

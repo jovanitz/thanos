@@ -3,6 +3,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
 import store from './state/store';
 import Home from './views/home/Home';
+import './app.scss';
 
 function App() {
   return (
