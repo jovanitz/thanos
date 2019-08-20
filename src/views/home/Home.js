@@ -1,12 +1,17 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import menu from '../../hoc/menu/menu';
+import Search from '../../components/search/Search';
 
 class Home extends Component {
+  componentDidMount() {
+
+  }
+
   render() {
     return (
-      <div>
-        Home
-      </div>
+      <Fragment>
+        <Search />
+      </Fragment>
       );
   }
 }

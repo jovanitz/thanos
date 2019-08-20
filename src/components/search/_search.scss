@@ -1,0 +1,23 @@
+.search {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  &__name {
+    margin-right: 1em;
+    font-size: 18px;
+  }
+
+  > input {
+    border: 1px solid white;
+    color: white;
+    background-color: black;
+    width: 300px;
+    border-radius: 15px;
+    outline: none;
+    padding: 10px;
+    font-size: 16px;
+  }
+}
